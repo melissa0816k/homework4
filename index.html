@@ -20,6 +20,81 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
+                <h2>Move the bar chart in a batch</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="myfigure" class="chart">
+                            <div class="bar-block" style="height: 26px; left:5"> 26 </div>
+                            <div class="bar-block" style="height: 26px; left:45px"> 26 </div>
+                            <div class="bar-block" style="height: 43px; left:85px"> 43 </div>
+                            <div class="bar-block" style="height: 42px; left:125px"> 42 </div>
+                            <div class="bar-block" style="height: 30px; left:165px"> 30 </div>
+                            <div class="bar-block" style="height: 45px; left:165px"> 45 </div>
+                            <div class="bar-block" style="height: 38px; left:165px"> 38 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <button id="add" class="btn btn-primary "> Increase  </button>
+                    </div>
+                </div>
+                <style>
+                    .bar-block {
+                        background-color:brown;
+                        color: white;
+                        text-align: right;
+                        margin-top: 5px;
+                        margin-bottom: 1px;
+                        position: absolute;
+                        width: 30px;
+                        bottom: 0;
+                    }
+                    
+                    .chart {
+                        position: relative;
+                        width: 300px;
+                        height: 200px;
+                        border: 1px solid;
+                        margin-bottom: 10px;
+                    }
+                </style>
+                <script>
+                    $(function() {
+                        $('#add').click(function() {
+                            // Note 1: map() method lets you execute a function on all matched elements
+                            $('.bar-block').map(function() {
+                                // Note 2: $(this) refers to the current match element
+                                // Note 3: Deal with string/ number conversion
+                                $(this).text($(this).text() * 1 + 5);
+                                // Note 4: Deal with the "px" unit in CSS property value
+                                var height_px = $(this).css('height');
+                                var height = height_px.substr(0, height_px.length - 2);
+                                $(this).css('height', (height * 1 + 5) + 'px');
+                            });
+                        });
+                    });
+                </script>
+
+                <h2>Move the bar chart with animation</h2>
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <button id="add-animate" class="btn btn-primary "> Add Oil! </button>
+                    </div>
+                </div>
+                <script>
+                    $(function() {
+                        $('#add-animate').click(function() {
+                            $('.bar-block').map(function() {
+                                $(this).text($(this).text() * 1 + 20);
+                                $(this).animate({
+                                    color: '#000',
+                                    height: '+=20',
+                                }, 500);
+                            });
+                        });
+                    });
+                </script>
                 <h1>Demo of jQuery for Interaction</h1>
 
                 <h2> Calculator </h2>
@@ -106,83 +181,12 @@
                         $('correction').hide();
                     })
                 </script>
-
-                <h2>Move the bar chart in a batch</h2>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="myfigure" class="chart">
-                            <div class="bar-block" style="height: 80px; left:5"> 80 </div>
-                            <div class="bar-block" style="height: 60px; left:45px"> 60 </div>
-                            <div class="bar-block" style="height: 90px; left:85px"> 90 </div>
-                            <div class="bar-block" style="height: 110px; left:125px"> 110 </div>
-                            <div class="bar-block" style="height: 20px; left:165px"> 20 </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="col-md-12 ">
-                        <button id="add" class="btn btn-primary "> Add Oil! </button>
-                    </div>
-                </div>
-                <style>
-                    .bar-block {
-                        background-color: #8286f4;
-                        color: white;
-                        text-align: right;
-                        margin-top: 5px;
-                        margin-bottom: 5px;
-                        position: absolute;
-                        width: 30px;
-                        bottom: 0;
-                    }
-                    
-                    .chart {
-                        position: relative;
-                        width: 300px;
-                        height: 200px;
-                        border: 1px solid;
-                        margin-bottom: 10px;
-                    }
-                </style>
-                <script>
-                    $(function() {
-                        $('#add').click(function() {
-                            // Note 1: map() method lets you execute a function on all matched elements
-                            $('.bar-block').map(function() {
-                                // Note 2: $(this) refers to the current match element
-                                // Note 3: Deal with string/ number conversion
-                                $(this).text($(this).text() * 1 + 5);
-                                // Note 4: Deal with the "px" unit in CSS property value
-                                var height_px = $(this).css('height');
-                                var height = height_px.substr(0, height_px.length - 2);
-                                $(this).css('height', (height * 1 + 5) + 'px');
-                            });
-                        });
-                    });
-                </script>
-
-                <h2>Move the bar chart with animation</h2>
-                <div class="row ">
-                    <div class="col-md-12 ">
-                        <button id="add-animate" class="btn btn-primary "> Add Oil! </button>
-                    </div>
-                </div>
-                <script>
-                    $(function() {
-                        $('#add-animate').click(function() {
-                            $('.bar-block').map(function() {
-                                $(this).text($(this).text() * 1 + 20);
-                                $(this).animate({
-                                    color: '#000',
-                                    height: '+=20',
-                                }, 500);
-                            });
-                        });
-                    });
-                </script>
             </div>
         </div>
     </div>
-
+<br>
+Reference: 
+    <p>Liver donation from deceased donor</p>
+<a href="http://www.organdonation.gov.hk/eng/statistics.html">Statistics from Hong Kong Organ Transplantation</a>
 </body>
 </html>
