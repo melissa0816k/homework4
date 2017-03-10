@@ -27,9 +27,74 @@
 </head>
 
 <body>
+  <p> Let's understand "what people may think" before we get started to illlustrate the statistics</p>
+  <h2> Myths about organ donation </h2>
+                <style>
+                    correction {
+                        color:brown;
+                        font-family: Verdana
+                    }
+                    
+                    .corrected {
+                        text-decoration: line-through;
+                        
+                    }
+                </style>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="font-family: Verdana"><b style="color: orangered">Myth:</b> <original>If I agree to donate my organs, the hospital staff won't work as hard to save my life.</original></p>
+                         <correction>When you go to the hospital for treatment, doctors focus on saving your life — not somebody else's. You'll be seen by a doctor whose specialty most closely matches your particular condition.</correction>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="toggle" class="btn btn-primary">Debunk the myth</button>
+                    </div>
+                </div>
+                <script>
+                    $(function() {
+                        var showCorrection = false;
+                        $('#toggle').click(function() {
+                            if (showCorrection) {
+                                $('correction').hide();
+                                $('original').removeClass('corrected');
+                                showCorrection = false;
+                            } else {
+                                $('correction').show();
+                                $('original').addClass('corrected');
+                                showCorrection = true;
+                            }
+                        });
+                        $('correction').hide();
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p>If 100 more people per year are willing to sign the agreement of organ donation: (check below) </p>
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <button id="add-animate" class="btn btn-primary "> <b>Boost <em>!</em></b> </button>
+                    </div>
+                </div>
+                <script>
+                    $(function() {
+                        $('#add-animate').click(function() {
+                            $('.bar-block').map(function() {
+                                $(this).text($(this).text() * 1 + 100);
+                                $(this).animate({
+                                    color: '#000',
+                                    height: '+=100',
+                                }, 500);
+                            });
+                        });
+                    });
+                </script>
+                <br>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6 col-sm-12 col-xs-12">
                 <h3><span class="glyphicon glyphicon-heart-empty"></span>2009-2013 Liver donation from the deceased donor</h3>
                 <div class="row">
                     <div class="col-md-12">
@@ -103,7 +168,7 @@
 
                 <h2> Calculator </h2>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
                             <label for="amount1">Decreased liver donor in 2009</label>
                             <input class="form-control" type="text" id="amount1" value="43">
@@ -153,73 +218,9 @@
                 </script>
                 </br>
 
-                <h2>Sign the agreement!</h2>
-                <a href="http://www.organdonation.gov.hk/eng/home.html"><img src="http://twdc.www.gov.hk/en/residents/health/images/rotating_banner_OD_240x139_icon.gif"></a>
-                <p>If more people are willing to sign the agreement of organ donation :  </p>
-                <div class="row ">
-                    <div class="col-md-12 ">
-                        <button id="add-animate" class="btn btn-primary "> <b>Boost <em>!</em></b> </button>
-                    </div>
-                </div>
-                <script>
-                    $(function() {
-                        $('#add-animate').click(function() {
-                            $('.bar-block').map(function() {
-                                $(this).text($(this).text() * 1 + 10);
-                                $(this).animate({
-                                    color: '#000',
-                                    height: '+=10',
-                                }, 500);
-                            });
-                        });
-                    });
-                </script>
+                <h2>Click & Sign the agreement!</h2>
+                <a href="http://www.organdonation.gov.hk/eng/home.html"><img src="http://twdc.www.gov.hk/en/residents/health/images/rotating_banner_OD_240x139_icon.gif"></a>          
                 <br>
-
-                <h2> Myths about organ donation </h2>
-                <style>
-                    correction {
-                        color:brown;
-                        font-family: Verdana
-                    }
-                    
-                    .corrected {
-                        text-decoration: line-through;
-                        
-                    }
-                </style>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p style="font-family: Verdana"><b style="color: orangered">Myth:</b> <original>If I agree to donate my organs, the hospital staff won't work as hard to save my life.</original></p>
-                         <correction>When you go to the hospital for treatment, doctors focus on saving your life — not somebody else's. You'll be seen by a doctor whose specialty most closely matches your particular condition.</correction>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <button id="toggle" class="btn btn-primary">Debunk the myth</button>
-                    </div>
-                </div>
-                <script>
-                    $(function() {
-                        var showCorrection = false;
-                        $('#toggle').click(function() {
-                            if (showCorrection) {
-                                $('correction').hide();
-                                $('original').removeClass('corrected');
-                                showCorrection = false;
-                            } else {
-                                $('correction').show();
-                                $('original').addClass('corrected');
-                                showCorrection = true;
-                            }
-                        });
-                        $('correction').hide();
-                    })
-                </script>
-            </div>
-        </div>
-    </div>
-<br>
 Reference: 
     <p>Liver donation from deceased donor</p>
 <a href="http://www.organdonation.gov.hk/eng/statistics.html">Statistics from Hong Kong Organ Transplantation</a>
